@@ -1,10 +1,13 @@
 const express = require('express');
 require('dotenv').config();
+const indexRouter = require('./routes/indexRouter');
+const newMsgRouter = require('./routes/newMsgRouter');
 
 const app = express();
 
 // Routes
-app.get('/', (req, res) => res.send('Mini Msg Board'));
+app.use('/', indexRouter); 
+app.use('/new', newMsgRouter);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
