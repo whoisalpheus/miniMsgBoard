@@ -1,5 +1,15 @@
 <html>
     <body>
-        <% message %>
+        <ul>
+            <% for (let i = 0; i < messages.length; i++) { %>
+                <li>
+                    <a href="<%=messages[i].href %>">
+                        <span> <%= messages[i].text %> </span><br>
+                        <span> <%= messages[i].user %> </span><br>
+                        <span> <%= messages[i].added %> </span>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
     </body>
 </html>
